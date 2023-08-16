@@ -1,0 +1,44 @@
+{
+  "name": "nodejs-rabbitmq",
+  "version": "1.0.0",
+  "description": "The mechanism for asynchronous processing of HTTP requests.",
+  "author": "Maksim Khitrov <khitrov.maks@gmail.com>",
+  "license": "MIT",
+  "private": true,
+  "keywords": [
+    "nodejs",
+    "rabbitmq"
+  ],
+  "homepage": "https://github.com/KhitrovMaksim/nodejs-rabbitmq#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/KhitrovMaksim/nodejs-rabbitmq.git"
+  },
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js",
+    "lint": "eslint . && prettier -c \"**/*.js\"",
+    "format": "eslint . --fix && prettier --write \"**/*.js\"",
+    "prepare": "husky install"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.20.7",
+    "@babel/core": "^7.20.12",
+    "@babel/eslint-parser": "^7.19.1",
+    "@babel/preset-env": "^7.20.2",
+    "eslint": "8.22.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-config-prettier": "^8.6.0",
+    "eslint-plugin-import": "^2.27.5",
+    "eslint-plugin-prettier": "^4.2.1",
+    "husky": "^8.0.0",
+    "lint-staged": "^14.0.0",
+    "prettier": "2.8.3"
+  },
+  "dependencies": {
+    "amqplib": "^0.10.3",
+    "circular-json": "^0.5.9",
+    "pino": "^8.10.0",
+    "pino-pretty": "^10.2.0"
+  }
+}

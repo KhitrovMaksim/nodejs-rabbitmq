@@ -1,0 +1,35 @@
+services:
+  m1:
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    command: node ./m1/main.js
+    volumes:
+      - .:/usr/src/app
+      - /usr/src/app/node_modules
+    ports:
+      - '3000:3000'
+    depends_on:
+      - rabbitmq
+
+  m2:
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    command: node ./m2/main.js
+    volumes:
+      - .:/usr/src/app
+      - /usr/src/app/node_modules
+    ports:
+      - '3001:3001'
+    depends_on:
+      - rabbitmq
+      - m1
+
+  rabbitmq:
+    image: rabbitmq:3-management
+    ports:
+      - '5672:5672'
+      - '15672:15672'
+
+
